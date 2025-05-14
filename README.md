@@ -25,11 +25,14 @@ need to implemt overflow detection circuit
 
 for addition :
 
-of = a[31] ^ b[31]
+of = a[31] & b[31] & !sum[31]
+
+of = !a[31] & !b[31] & sum[31]
 
 for substraction :
 
-of = ~(a[31 ^ b[31])
+of = !a[31] & b[31] & !sum[31]
 
+0f = a[31] & !b[31] & sum[31]
 
 
